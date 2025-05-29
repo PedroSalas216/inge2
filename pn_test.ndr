@@ -1,0 +1,22 @@
+t 65.0 50.0 {productor cacao} s 3 4 n {} ne
+p 160.0 50.0 {buffer cacao} 0 n
+t 65.0 155.0 {productor leche} s 10 11 n {} ne
+p 160.0 155.0 {buffer leche} 0 n
+t 280.0 50.0 {generacion de cucharadas} s 0 w n {} ne
+t 280.0 155.0 {consumidor leche} s 0 w n {} ne
+p 440.0 50.0 cucharadas 0 n
+p 440.0 155.0 {vaso leche} 0 n
+p 700.0 105.0 chocolatadas 0 n
+t 580.0 105.0 {armador de chocolatadas} s 0 w n {} ne
+e {buffer cacao} {generacion de cucharadas} 1 n
+e {productor cacao} {buffer cacao} 1 n
+e {productor leche} {buffer leche} 1 n
+e {buffer leche} {consumidor leche} 1 n
+e {generacion de cucharadas} cucharadas 1 n
+e {consumidor leche} {vaso leche} 1 n
+e cucharadas {armador de chocolatadas} 2 n
+e {vaso leche} {armador de chocolatadas} 1 n
+e {armador de chocolatadas} chocolatadas 1 n
+h pn_test
+
+
